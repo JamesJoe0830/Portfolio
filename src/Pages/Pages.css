@@ -3,14 +3,6 @@
     font-weight: 400;
     src: url("../fonts/Black_Han_Sans/BlackHanSans-Regular.ttf") format("truetype");
 }
-.about__wrapper {
-    width: 100%;
-    min-height: 400px;
-    padding: 4rem 2rem;
-    margin: 0 auto;
-    margin-top: 10px;
-    background-color: rgb(240, 234, 226);
-}
 
 .sectionTitle {
     display: table;
@@ -28,7 +20,15 @@
 
    
 }
-
+/* About Page */
+.about__wrapper {
+    width: 100%;
+    min-height: 400px;
+    padding: 4rem 2rem;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: rgb(240, 234, 226);
+}
 .aboutMe__contents {
     display: flex;
     margin: 0px auto;
@@ -69,6 +69,7 @@
     font-weight: 400;
     font-size: 1rem;
 }
+/* Skills Page */
 
 .skills__wrapper {
     width: 100%;
@@ -111,6 +112,7 @@
     width: 80%;
 }
 
+/* Archiving Page */
 .archiving_element {
     background-color: white;
     flex-shrink: 0;
