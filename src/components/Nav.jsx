@@ -1,14 +1,22 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import { Link } from "react-scroll";
+import "./Nav.css";
 export default function Nav() {
   const MoveToTop = () => {
     // top:0 >> 맨위로  behavior:smooth >> 부드럽게 이동할수 있게 설정하는 속성
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+  const [scrollPosition,setScrollPosition] = useState(0);
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  }
+  useEffect(()=>{
+    window.addEventListener('scroll', updateScroll);
+  })
   return (
     <div>
-      <NavContainer>
+      <NavContainer className={scrollPosition<80 ? "basic_navContainer":"scroll_navContainer"}>
         <NavElements>
           <PortfolioName onClick={()=>{MoveToTop();}}>James</PortfolioName>
           <PortfolioMenu>
@@ -70,16 +78,15 @@ const NavContainer = styled.div`
   top:0;
   z-index: 9999;
   width: 100%;
-  border-bottom: 1px solid;
-  background-color: rgba(255, 255, 255, 0.5);
+  /* border-bottom: 1px solid; */
+
 `;
 
 const NavElements = styled.div`
   position: relative;
   width: 1100px;
   margin: 0 auto;
-  text-align: center;
-  padding: 28px 0 24px;
+  text-align: center; 
 `;
 
 const PortfolioName = styled.div`
@@ -87,6 +94,7 @@ const PortfolioName = styled.div`
   font-size: 22px;
   font-weight: 600;
   margin: 0px auto;
+  padding: 20px;
   cursor: pointer;
   color: #4a4a4a;
   &:hover{
@@ -98,10 +106,11 @@ const PortfolioName = styled.div`
 const PortfolioMenu = styled.div`
   display: flex;
   float: right;
+  padding: 26px 0px 26px 0px;
 `;
 
 const MenuItem = styled.div`
-  margin-left: 10px;
+  margin-left: 20px;
   cursor: pointer;
   &:hover{
     color: #000000;
