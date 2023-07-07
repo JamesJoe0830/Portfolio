@@ -8,6 +8,8 @@ import {
 import { ImLocation } from "react-icons/im";
 import { IoIosMail } from "react-icons/io";
 import { FaGraduationCap } from "react-icons/fa";
+import Fade from "react-reveal/Fade";
+
 const aboutMe = [
   {
     id: 1,
@@ -48,6 +50,7 @@ const aboutMe = [
 ];
 
 export default function About() {
+  
   return (
     <div id="ABOUT ME" className="about__wrapper">
       <section className="sectionTitle">
@@ -57,6 +60,7 @@ export default function About() {
         {aboutMe.map((data) => {
           return (
             <>
+            <Fade bottom>
               <div className="aboutMe__elements">
                 <div className="aboutMe__icon">{data?.icon}</div>
                 <div className="aboutME__field">
@@ -66,6 +70,7 @@ export default function About() {
                   <div className="aboutMe__value">{data.Value} </div>
                 </div>
               </div>
+            </Fade>
             </>
           );
         })}
