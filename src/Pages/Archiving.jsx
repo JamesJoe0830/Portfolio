@@ -1,5 +1,6 @@
 import React from "react";
 import { BsGithub } from "react-icons/bs";
+import Fade from "react-reveal/Fade";
 const urlInfo = [
   {
     id: 1,
@@ -14,6 +15,7 @@ export default function Archiving() {
         <section className="sectionTitle">
           <div className="title">ARCHIVING</div>
         </section>
+        <Fade bottom>
         <section className="skills__section">
           <div className="archiving_element">
             <div className="archiving_title">Github</div>
@@ -47,6 +49,7 @@ export default function Archiving() {
             <img src="/images/Blog.png" className="archiving__blogImg" alt="Ect" />
           </div>
         </section>
+        </Fade>
       </div>
     </div>
   );
