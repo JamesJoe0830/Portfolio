@@ -3,6 +3,7 @@ import About from "./About";
 import Banner from "./Banner";
 import Archiving from "./Archiving";
 import Skills from "./Skills";
+import Project from "./Project";
 import "./Pages.css";
 import waves from "../videos/waves.mp4";
 
@@ -20,7 +21,7 @@ export default function Home() {
           <div className="start__container">
 
             <h1>Welcome</h1>
-            <div>James site</div>
+            <div>JaeKyeun site</div>
           <button className="start__button" onClick={handleStart}>
                 <div>Visit</div>
           </button>
@@ -36,6 +37,7 @@ export default function Home() {
         <About />
         <Skills />
         <Archiving />
+        <Project/>
       </div>
     );
   }
