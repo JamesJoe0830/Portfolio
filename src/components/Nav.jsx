@@ -43,7 +43,9 @@ export default function Nav() {
     <div>
       <NavContainer className={scrollPosition<80 ? "basic_navContainer":"scroll_navContainer"}>
         <NavElements>
-          <PortfolioName onClick={()=>{MoveToTop();}}>James</PortfolioName>
+          <PortfolioNameBox>
+          <PortfolioName onClick={()=>{MoveToTop();}}>JaeKyeun</PortfolioName>
+          </PortfolioNameBox>
           {windowWidth > 1200 ?
           <PortfolioMenu>
             <MenuItem>
@@ -163,25 +165,32 @@ const NavContainer = styled.div`
 `;
 
 const NavElements = styled.div`
+  display:flex;
+  justify-content:space-between;
   position: relative;
-  width: 1200px;
+  width: 1100px;
   margin: 0 auto;
   text-align: center; 
   @media screen and (max-width: 1200px) {
-    width: 800px;
+    width: 700px;
   }
   @media screen and (max-width: 800px) {
-    width: 600px;
+    width: 500px;
   }
 
 `;
-
+const PortfolioNameBox =styled.div`
+  display:flex;
+  height:70px;
+  width:fit-content;
+  align-items: center;
+`;
 const PortfolioName = styled.div`
   float: left;
-  font-size: 22px;
+  font-size: 1.5rem;
   font-weight: 600;
   margin: 0px auto;
-  padding: 20px;
+  height: 70px
   cursor: pointer;
   color: #4a4a4a;
   &:hover{
@@ -189,6 +198,7 @@ const PortfolioName = styled.div`
     font-weight: 700;
   }
 `;
+
 
 const PortfolioMenu = styled.div`
   display: flex;

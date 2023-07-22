@@ -8,8 +8,23 @@
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
+    }
+}
+
+@keyframes scrollAnimation {
+
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(20px);
     }
 }
 
@@ -28,7 +43,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0,0,0,.2);
+    background-color: rgba(0, 0, 0, .2);
 }
 
 .start__video {
@@ -47,18 +62,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color:white;
+    color: white;
     font-family: "Han Sans";
     animation: fadein 4s;
 }
 
 .start__button {
     position: absolute;
-    bottom:20%;
+    bottom: 20%;
     background-color: rgb(66, 64, 62);
     color: white;
     border: none;
-    font-family:"Han Sans";
+    font-family: "Han Sans";
     margin: 0 auto;
     padding: 10px 30px;
     text-align: center;
@@ -69,31 +84,30 @@
     opacity: 1;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-    opacity:0.8;
+    opacity: 0.8;
     text-transform: uppercase;
 
 }
-.start__button:hover{
-    color:rgb(0, 171, 14);
+
+.start__button:hover {
+    color: rgb(0, 171, 14);
     background-color: rgb(229, 228, 226);
-    opacity:1;
-    transition:0.7s
-
+    opacity: 1;
+    transition: 0.7s
 }
-.start__button:after{
 
-}
+.start__button:after {}
 
 
 /* Banner */
 .banner_wrapper {
     display: flex;
+    flex-direction: column;
     width: 100%;
     min-height: 800px;
     background-image: url(../../public/images/Banner2.jpeg);
     background-size: cover;
-    top: 0;
-
+    justify-content: center;
 }
 
 .banner_info {
@@ -104,6 +118,7 @@
     height: 300px;
     background-color: #f3eeee;
     margin: 0 auto;
+    margin-bottom: 5%;
     align-self: center;
     border-radius: 3%;
     opacity: 0.8;
@@ -176,10 +191,11 @@
 .title {
     border-bottom-width: 1px;
     border-bottom-style: solid;
+    text-shadow: 2px 2px 2px rgb(255, 255, 255);
     font-family: "Han Sans";
     font-size: 3rem;
     line-height: 1.5;
-    color: rgb(22, 134, 126);
+    color: rgb(52, 52, 52);
 }
 
 /* About Page */
@@ -189,7 +205,7 @@
     padding: 4rem 2rem;
     margin: 0 auto;
     margin-top: 10px;
-    background-color: rgb(240, 234, 226);
+    background-color: rgba(228, 228, 228, 0.5);
 }
 
 .aboutMe__contents {
@@ -241,7 +257,7 @@
     padding: 4rem 2rem;
     margin: 0 auto;
     margin-top: 10px;
-    background-color: rgb(226, 238, 240);
+    background-color: rgba(228, 228, 228, 0.5);
 }
 
 .skills__section {
@@ -254,12 +270,13 @@
 }
 
 .skills_element {
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.2);
     flex-shrink: 0;
     width: 30rem;
     padding: 1.5rem;
     margin: 0 auto 2rem;
-    border-radius: 1rem;
+    border-radius: 2%;
+
 }
 
 .skills_title {
@@ -268,12 +285,20 @@
     border-bottom: 1px solid #ccc;
     font-weight: 700;
     font-size: 1.5rem;
-    color: #f4623a;
+    color: #ffffff;
+    text-shadow: 2px 2px 2px gray;
+    opacity: 1;
 }
 
-.skills__img {
+.skills {
     display: flex;
-    width: 80%;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.skills_img {
+    box-sizing: border-box;
+    padding: 0px 5px;
 }
 
 /* Archiving Page */
@@ -281,10 +306,16 @@
     background-color: white;
     flex-shrink: 0;
     width: 30rem;
-    height: 40rem;
+    height: 30rem;
+    overflow-y: scroll;
     padding: 1.5rem;
     margin: 0 auto 2rem;
     border-radius: 1rem;
+}
+
+.archiving_element::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera*/
 }
 
 .archiving_title {
@@ -294,6 +325,26 @@
     font-weight: 700;
     font-size: 1.5rem;
     color: #2e2e2d;
+}
+
+.archiving_container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2rem;
+
+}
+
+.scroll_icon {
+    text-align: center;
+    font-size: 2rem;
+    transform: translateY(-50%);
+    animation: scrollAnimation 2s infinite;
+}
+
+.scroll_text {
+    font-size: 1.2rem;
 }
 
 .archiving__githubImg {
@@ -339,8 +390,66 @@
     transform: scale(1.25);
 }
 
-
-
 .blogicon {
     width: 100%;
+}
+
+/* PROJECTS */
+.project__wrapper {
+    width: 100%;
+    min-height: 1000px;
+    padding: 4rem 2rem;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: rgba(228, 228, 228, 0.5);
+}
+
+.project__totalContainer {
+    display: flex;
+    padding: 30px;
+    max-width: 1100px;
+    height: 100%;
+    margin: 0 auto;
+    overflow-x: scroll;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.15);
+
+
+}
+
+.project_container {
+    min-width: 30rem;
+    min-height: 40rem;
+    background-color: rgb(201, 188, 188, 0.3);
+    border-radius: 1%;
+    margin-right: 4%;
+    padding: 20px
+}
+.readMe_div{
+    display: flex;
+    float:right;
+}
+.readMe_button{
+    display: flex;
+    right:0;
+    background-color: rgb(66, 64, 62);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    opacity: 0.8;
+    text-transform: uppercase;
+}
+.readMe_button:hover{
+    background-color: rgb(66, 64, 62, 0.3);
+}
+.procject_header{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
