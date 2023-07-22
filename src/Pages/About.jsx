@@ -39,7 +39,7 @@ const aboutMe = [
     id: 4,
     icon: <IoIosMail />,
     Label: "이메일",
-    Value: "kyeun950830@gamil.com",
+    Value: "kyeun950830@gmail.com",
   },
   {
     id: 5,
