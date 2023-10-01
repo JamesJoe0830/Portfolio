@@ -1,9 +1,8 @@
 import React from "react";
 import "./Pages.css";
-import Fade from "react-reveal/Fade";
+import Fade from "react-awesome-reveal";
 
 const frontEnd = [
-  
   {
     id: 1,
     img: "https://img.shields.io/badge/html5-E34F26?style=flat&logo=html5&logoColor=white",
@@ -21,7 +20,17 @@ const frontEnd = [
   },
   {
     id: 4,
+    img: "https://img.shields.io/badge/JavaScript-F7DF1E?style=flate&logo=javascript&logoColor=white",
+    alter: "node.js",
+  },
+  {
+    id: 4,
     img: "https://img.shields.io/badge/node.js-339933?style=flate&logo=Node.js&logoColor=white",
+    alter: "node.js",
+  },
+  {
+    id: 4,
+    img: "https://img.shields.io/badge/Typescript-3178C6?style=flat-square&logo=javascript&logoColor=white",
     alter: "node.js",
   },
   {
@@ -42,7 +51,6 @@ const ect = [
   },
 ];
 
-
 export default function Skills() {
   return (
     <div id="SKILLS">
@@ -55,11 +63,20 @@ export default function Skills() {
           <Fade bottom>
             <div className="skills_element">
               <div className="skills_title">Frontend</div>
-              <div className="skills">
-              {frontEnd.map((data) => {
-                return (
-                <div key={data.id}><img className="skills_img" src={data.img} /></div>);
-              })}
+              <div className="skillBox">
+                <div className="skills">
+                  {frontEnd.map((data) => {
+                    return (
+                      <div className="skill_element" key={data.id}>
+                        <img
+                          className="skills_img"
+                          src={data.img}
+                          alt={data.alter}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
               {/* <img src ="/images/Frontend.png" className="skills__img" alt="Frontend"/> */}
             </div>
@@ -68,10 +85,17 @@ export default function Skills() {
             <div className="skills_element">
               <div className="skills_title">Ect</div>
               <div className="skills">
-              {ect.map((data) => {
-                return (
-                <div key={data.id}><img className="skills_img" src={data.img} /></div>);
-              })}
+                {ect.map((data) => {
+                  return (
+                    <div key={data.id}>
+                      <img
+                        className="skills_img"
+                        src={data.img}
+                        alt={data.alter}
+                      />
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </Fade>

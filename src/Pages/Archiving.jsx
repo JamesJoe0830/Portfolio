@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { BsGithub, BsMouse } from "react-icons/bs";
-import Fade from "react-reveal/Fade";
 const urlInfo = [
   {
     id: 1,
@@ -16,51 +15,50 @@ export default function Archiving() {
         <section className="sectionTitle">
           <div className="title">ARCHIVING</div>
         </section>
-        <Fade bottom>
-          <section className="skills__section">
-            <div className="archiving_element">
-              <div className="archiving_title">Github</div>
-              <button
-                class="archiving__icon"
-                onClick={() => {
-                  window.open(`${urlInfo[0].url}`);
-                }}
-              >
-                {urlInfo[0].icon}
-              </button>
-              <img
-                src="/images/Github.png"
-                className="archiving__githubImg"
-                alt="Github"
-              />
-            </div>
-            <div className="archiving_element">
+
+        <section className="skills__section">
+          <div className="archiving_element">
+            <div className="archiving_title">Github</div>
+            <button
+              class="archiving__icon"
+              onClick={() => {
+                window.open(`${urlInfo[0].url}`);
+              }}
+            >
+              {urlInfo[0].icon}
+            </button>
+            <img
+              src="/images/Github.png"
+              className="archiving__githubImg"
+              alt="Github"
+            />
+          </div>
+          <div className="archiving_element">
+            <div>
+              <div className="archiving_title">Blog</div>
               <div>
-                <div className="archiving_title">Blog</div>
-                <div>
-                  <a href="https://velog.io/@kyeun95">
-                    <img
-                      src="https://velog-readme-stats.vercel.app/api/badge?name=James"
-                      alt="Velog's GitHub stats"
-                    />
-                  </a>
-                </div>
+                <a href="https://velog.io/@kyeun95">
+                  <img
+                    src="https://velog-readme-stats.vercel.app/api/badge?name=James"
+                    alt="Velog's GitHub stats"
+                  />
+                </a>
               </div>
-              <div className="archiving_container">
-                <div>
+            </div>
+            <div className="archiving_container">
+              <div>
                 <img
                   src="/images/Blog.png"
                   className="archiving__blogImg"
                   alt="Ect"
                 />
-                </div>
-                <div className="scroll_icon">
-                  <BsMouse /> <div className="scroll_text">Scroll</div> 
-                </div>
+              </div>
+              <div className="scroll_icon">
+                <BsMouse /> <div className="scroll_text">Scroll</div>
               </div>
             </div>
-          </section>
-        </Fade>
+          </div>
+        </section>
       </div>
     </div>
   );
